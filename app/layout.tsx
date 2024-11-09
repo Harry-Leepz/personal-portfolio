@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
+
+import RedBlur from "@/components/background/red-blur";
+import BlueBlur from "@/components/background/blue-blur";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.className} bg-slate-200 text-slate-950`}>
+        <RedBlur />
+        <BlueBlur />
         {children}
       </body>
     </html>
