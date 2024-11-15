@@ -5,6 +5,7 @@ import "./globals.css";
 
 import RedBlur from "@/components/background/red-blur";
 import BlueBlur from "@/components/background/blue-blur";
+import Header from "@/components/header/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-slate-200 text-slate-950`}>
         <RedBlur />
         <BlueBlur />
+        <Header />
         {children}
       </body>
     </html>
