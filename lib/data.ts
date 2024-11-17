@@ -18,6 +18,7 @@ export const projectsData = [
       "E-Commerce website selling basic starting gym equipment, like dubmbells, kettlebells, and body weights.",
     tags: ["Python", "Django", "PostgresSQL", "Bootstrap", "Stripe"],
     imageUrl: nandlImage,
+    link: "https://github.com/Harry-Leepz/Nourish-and-Lift",
   },
   {
     title: "Prime Haven",
@@ -33,6 +34,7 @@ export const projectsData = [
       "MongoDB",
     ],
     imageUrl: primehavenImage,
+    link: "https://github.com/Harry-Leepz/prime-haven",
   },
   {
     title: "Developer Jobs",
@@ -40,5 +42,6 @@ export const projectsData = [
       "Inspired by Indeed, this website allows users to search for developer jobs by technology.",
     tags: ["React", "TypeScript", "Tanstack-React Query", "Radix UI", "CSS"],
     imageUrl: devjobsImage,
+    link: "https://github.com/Harry-Leepz/dev-jobs-react",
   },
 ] as const;
