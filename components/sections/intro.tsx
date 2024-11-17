@@ -11,7 +11,10 @@ import Link from "next/link";
 
 export default function Intro() {
   return (
-    <section className='mb-28 text-center max-w-[50rem] sm:mb-0'>
+    <section
+      className='mb-28 text-center max-w-[50rem] sm:mb-0 scroll-mt-[100rem]'
+      id='home'
+    >
       {/* Profile Image */}
       <div className='flex items-center justify-center'>
         <div className='relative'>
