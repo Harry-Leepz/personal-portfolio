@@ -48,7 +48,7 @@ export default function Intro() {
       </div>
 
       {/* Introduction Text */}
-      <motion.p
+      <motion.h1
         className='mb-10 mt-4 px-4 text-2xl !leading-[1.5] font-medium sm:text-4xl'
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function Intro() {
         seamless, user-centric web applications. I specialize in front-end
         development with
         <span className='font-bold italic underline'> React (Next.js).</span>
-      </motion.p>
+      </motion.h1>
 
       {/* Navigation Links */}
       <motion.div
