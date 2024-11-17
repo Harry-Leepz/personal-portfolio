@@ -3,8 +3,11 @@
 import Image from "next/image";
 
 import { motion } from "motion/react";
+import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
 
 import image from "@/public/profile.png";
+import Link from "next/link";
 
 export default function Intro() {
   return (
@@ -59,6 +62,48 @@ export default function Intro() {
       </motion.p>
 
       {/* Navigation Links */}
+      <motion.div
+        className='flex flex-col sm:flex-row justify-center gap-2 px-4 text-lg font-medium'
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
+        <Link
+          href='#contact'
+          className='group bg-slate-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none 
+          focus:scale-110 hover:scale-110 hover:bg-slate-950 active:scale-105 transition'
+        >
+          Contact me here{" "}
+          <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition' />
+        </Link>
+
+        <a
+          href=''
+          className='group bg-white text-slate-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none 
+          focus:scale-110 hover:scale-110 hover:bg-slate-50 active:scale-105 transition border border-slate-900/10'
+        >
+          Download CV{" "}
+          <HiDownload className='opacity-70 group-hover:translate-y-1 transition' />
+        </a>
+
+        <a
+          href='https://www.linkedin.com/in/harkarn-dhillon/'
+          target='_blank'
+          className='bg-white text-slate-700 flex p-4 items-center gap-2 rounded-full text-[1.25rem] outline-none 
+          focus:scale-[1.15] hover:text-slate-950  hover:scale-[1.15] hover:bg-slate-50 active:scale-[1.15] transition border border-slate-900/10'
+        >
+          <BsLinkedin />
+        </a>
+
+        <a
+          href='https://github.com/Harry-Leepz'
+          target='_blank'
+          className='bg-white text-slate-700 flex p-4 items-center gap-2 rounded-full text-[1.35rem] outline-none 
+          focus:scale-[1.15] hover:text-slate-950 hover:scale-[1.15] hover:bg-slate-50 active:scale-[1.15] transition border border-slate-900/10'
+        >
+          <BsGithub />
+        </a>
+      </motion.div>
     </section>
   );
 }
