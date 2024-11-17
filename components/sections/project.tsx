@@ -3,6 +3,7 @@ import { useRef } from "react";
 
 import Image from "next/image";
 import { useScroll, motion, useTransform } from "motion/react";
+import { BsGithub } from "react-icons/bs";
 
 import { projectsData } from "@/lib/data";
 
@@ -13,6 +14,7 @@ export default function Project({
   description,
   tags,
   imageUrl,
+  link,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -30,7 +32,10 @@ export default function Project({
       overflow-hidden sm:pr-8 relative sm:h-[20rem] mb-3 sm:mb-8 last:mb-0 group even:pl-8 hover:bg-slate-100 transition rounded-lg'
     >
       <div className='pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full group-even:ml-[18rem]'>
-        <h3 className='text-2xl font-semibold'>{title}</h3>
+        <a href={link} target='_blank' className='flex items-center gap-2'>
+          <BsGithub className='text-xl' />
+          <h3 className='text-2xl font-semibold'>{title}</h3>
+        </a>
         <p className='mt-2 leading-relaxed text-slate-700'>{description}</p>
         <ul className='flex flex-wrap gap-2 mt-4 sm:mt-auto'>
           {tags.map((tag, index) => (
