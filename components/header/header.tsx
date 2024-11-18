@@ -1,11 +1,15 @@
 "use client";
+import { useState } from "react";
 
 import { motion } from "motion/react";
 
 import { navLinks } from "@/lib/data";
 import Link from "next/link";
+import clsx from "clsx";
 
 export default function Header() {
+  const [currentActiveSection, setCurrentActiveSection] = useState("Projects");
+
   return (
     <header className='z-[999] relative'>
       <motion.div
@@ -30,7 +34,10 @@ export default function Header() {
             >
               <Link
                 href={link.hash}
-                className='flex w-full items-center justify-center px-3 py-3 hover:text-slate-950 transition'
+                className={clsx(
+                  "flex w-full items-center justify-center px-3 py-3 hover:text-slate-950 transition",
+                  { "text-slate-950": currentActiveSection === link.name }
+                )}
               >
                 {link.name}
               </Link>
