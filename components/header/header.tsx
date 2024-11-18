@@ -28,7 +28,7 @@ export default function Header() {
           {navLinks.map((link) => (
             <motion.li
               key={link.hash}
-              className='h-3/4 flex items-center justify-center'
+              className='relative h-3/4 flex items-center justify-center'
               initial={{ y: -300, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
@@ -38,8 +38,13 @@ export default function Header() {
                   "flex w-full items-center justify-center px-3 py-3 hover:text-slate-950 transition",
                   { "text-slate-950": currentActiveSection === link.name }
                 )}
+                onClick={() => setCurrentActiveSection(link.name)}
               >
                 {link.name}
+
+                {currentActiveSection === link.name && (
+                  <span className='absolute bg-slate-200 rounded-full inset-0 -z-10' />
+                )}
               </Link>
             </motion.li>
           ))}
