@@ -1,14 +1,16 @@
 "use client";
-import { useState } from "react";
 
 import { motion } from "motion/react";
 
-import { navLinks } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { navLinks } from "@/lib/data";
+
 export default function Header() {
-  const [currentActiveSection, setCurrentActiveSection] = useState("Projects");
+  const { currentActiveSection, setCurrentActiveSection } =
+    useActiveSectionContext();
 
   return (
     <header className='z-[999] relative'>
