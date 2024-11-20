@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 
+import ActiveSectionContextProvider from "@/context/active-section-context";
+
 import RedBlur from "@/components/background/red-blur";
 import BlueBlur from "@/components/background/blue-blur";
 import Header from "@/components/header/header";
@@ -26,8 +28,10 @@ export default function RootLayout({
       >
         <RedBlur />
         <BlueBlur />
-        <Header />
-        {children}
+        <ActiveSectionContextProvider>
+          <Header />
+          {children}
+        </ActiveSectionContextProvider>
       </body>
     </html>
   );
