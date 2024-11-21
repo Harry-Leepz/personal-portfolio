@@ -1,17 +1,29 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
-
+import Link from "next/link";
+import { useInView } from "react-intersection-observer";
 import { motion } from "motion/react";
 import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 
 import image from "@/public/profile.png";
-import Link from "next/link";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Intro() {
+  const { ref, inView } = useInView({ threshold: 0.75 });
+  const { setCurrentActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setCurrentActiveSection("Home");
+    }
+  }, [inView, setCurrentActiveSection]);
+
   return (
     <section
+      ref={ref}
       className='mb-28 text-center max-w-[50rem] sm:mb-0 scroll-mt-[100rem]'
       id='home'
     >
