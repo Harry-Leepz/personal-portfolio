@@ -7,10 +7,19 @@ import clsx from "clsx";
 
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { navLinks } from "@/lib/data";
+import { TSectionName } from "@/lib/types";
 
 export default function Header() {
-  const { currentActiveSection, setCurrentActiveSection } =
-    useActiveSectionContext();
+  const {
+    currentActiveSection,
+    setCurrentActiveSection,
+    setTimeSinceLastClicked,
+  } = useActiveSectionContext();
+
+  const handleNavLinkClick = (navLink: TSectionName) => {
+    setCurrentActiveSection(navLink);
+    setTimeSinceLastClicked(Date.now());
+  };
 
   return (
     <header className='z-[999] relative'>
@@ -40,7 +49,7 @@ export default function Header() {
                   "flex w-full items-center justify-center px-3 py-3 hover:text-slate-950 transition",
                   { "text-slate-950": currentActiveSection === link.name }
                 )}
-                onClick={() => setCurrentActiveSection(link.name)}
+                onClick={() => handleNavLinkClick(link.name)}
               >
                 {link.name}
 
