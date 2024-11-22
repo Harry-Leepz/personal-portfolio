@@ -2,17 +2,17 @@
 
 import { createContext, useState, useContext } from "react";
 
-import { navLinks } from "@/lib/data";
+import { TSectionName } from "@/lib/types";
 
 type ContextProviderProps = {
   children: React.ReactNode;
 };
 
-type TSectionName = (typeof navLinks)[number]["name"];
-
 type ActiveSectionContextType = {
   currentActiveSection: TSectionName;
   setCurrentActiveSection: React.Dispatch<React.SetStateAction<TSectionName>>;
+  timeSinceLastClicked: number;
+  setTimeSinceLastClicked: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const ActiveSectionContext =
@@ -23,10 +23,16 @@ export default function ActiveSectionContextProvider({
 }: ContextProviderProps) {
   const [currentActiveSection, setCurrentActiveSection] =
     useState<TSectionName>("Home");
+  const [timeSinceLastClicked, setTimeSinceLastClicked] = useState(0);
 
   return (
     <ActiveSectionContext.Provider
-      value={{ currentActiveSection, setCurrentActiveSection }}
+      value={{
+        currentActiveSection,
+        setCurrentActiveSection,
+        timeSinceLastClicked,
+        setTimeSinceLastClicked,
+      }}
     >
       {children}
     </ActiveSectionContext.Provider>
