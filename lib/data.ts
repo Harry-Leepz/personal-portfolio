@@ -45,3 +45,24 @@ export const projectsData = [
     link: "https://github.com/Harry-Leepz/dev-jobs-react",
   },
 ] as const;
+
+export const skillsData = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Python",
+  "Django",
+  "PostgreSQL",
+  "MongoDB",
+  "Firebase",
+  "Prisma",
+  "Django Rest Framework",
+  "Node.js",
+  "Framer Motion",
+  "Git",
+] as const;
