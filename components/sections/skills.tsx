@@ -4,11 +4,19 @@ import { skillsData } from "@/lib/data";
 
 export default function Skills() {
   return (
-    <section>
+    <section
+      id='skills'
+      className='mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40'
+    >
       <SectionHeading>My Skills</SectionHeading>
-      <ul>
+      <ul className='flex flex-wrap justify-center gap-2 text-lg text-slate-800'>
         {skillsData.map((skill) => (
-          <li key={skill}>{skill}</li>
+          <li
+            className='border bg-white border-black/20 rounded-xl px-5 py-3'
+            key={skill}
+          >
+            {skill}
+          </li>
         ))}
       </ul>
     </section>
