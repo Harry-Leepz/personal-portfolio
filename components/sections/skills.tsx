@@ -1,10 +1,16 @@
+"use client";
+
+import useSectionInView from "@/lib/hooks";
 import SectionHeading from "./section-heading";
 
 import { skillsData } from "@/lib/data";
 
 export default function Skills() {
+  const { ref } = useSectionInView("Skills");
+
   return (
     <section
+      ref={ref}
       id='skills'
       className='mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40'
     >
