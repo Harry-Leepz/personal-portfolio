@@ -1,3 +1,9 @@
+import React from "react";
+
+import { LuGraduationCap } from "react-icons/lu";
+import { CgWorkAlt } from "react-icons/cg";
+import { SiCodementor } from "react-icons/si";
+
 import nandlImage from "@/public/nandl.png";
 import devjobsImage from "@/public/dev-jobs.png";
 import primehavenImage from "@/public/prime-haven.png";
@@ -65,4 +71,31 @@ export const skillsData = [
   "Node.js",
   "Framer Motion",
   "Git",
+] as const;
+
+export const experiencesData = [
+  {
+    title: "Graduated @ Code Institute",
+    location: "London, UK",
+    description:
+      "Enrolled in the Full-Stack Software Development course at Code Institute. Graduated with a diploma in Full-Stack Software Development twelve months late.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2021",
+  },
+  {
+    title: "Software Developer @ PwC",
+    location: "London, UK",
+    description:
+      "I worked as a Software Developer at PwC. Working in the Advanced research and Enginnering Centre. Delivered complex projects in coordination with multi-faceted teams, encompassing designers, project managers, and QA engineers.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2021 - 2024",
+  },
+  {
+    title: "Course Mentor @ Code Institute",
+    location: "Remote",
+    description:
+      "Mentoring over 50 students through the complete full-stack development process, covering HTML, CSS, JavaScript, Python, and Django. Guiding students and supporting them to build strong technical foundations and develop industry-relevant skills.",
+    icon: React.createElement(SiCodementor),
+    date: "2022 - present",
+  },
 ] as const;
