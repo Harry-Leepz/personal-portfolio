@@ -7,11 +7,14 @@ import { motion } from "motion/react";
 import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 
+import { useActiveSectionContext } from "@/context/active-section-context";
 import useSectionInView from "@/lib/hooks";
 import image from "@/public/profile.png";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home");
+  const { setCurrentActiveSection, setTimeSinceLastClicked } =
+    useActiveSectionContext();
 
   return (
     <section
@@ -79,6 +82,10 @@ export default function Intro() {
           href='#contact'
           className='group bg-slate-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none 
           focus:scale-110 hover:scale-110 hover:bg-slate-950 active:scale-105 transition'
+          onClick={() => {
+            setCurrentActiveSection("Contact");
+            setTimeSinceLastClicked(Date.now());
+          }}
         >
           Contact me here{" "}
           <BsArrowRight className='opacity-70 group-hover:translate-x-1 transition' />
