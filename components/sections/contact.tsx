@@ -24,7 +24,7 @@ export default function Contact() {
       <p className='text-slate-700 -mt-6'>
         Please contact me directly via{" "}
         <a
-          className='italic underline font-semibold'
+          className='underline font-semibold'
           href='mailto:hdhillon478@gmail.com'
           target='_blank'
         >
