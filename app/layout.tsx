@@ -8,6 +8,7 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 import RedBlur from "@/components/background/red-blur";
 import BlueBlur from "@/components/background/blue-blur";
 import Header from "@/components/header/header";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ActiveSectionContextProvider>
           <Header />
           {children}
+          <Toaster position='top-right' />
         </ActiveSectionContextProvider>
       </body>
     </html>
