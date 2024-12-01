@@ -1,15 +1,30 @@
 "use client";
 
 import { motion } from "motion/react";
-import { FaPaperPlane } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 import useSectionInView from "@/lib/hooks";
 import SectionHeading from "./section-heading";
 
 import { sendEmail } from "@/actions/actions";
+import SubmitBtn from "@/components/buttons/submit-btn";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+
+  const handleSubmit = async (formData: FormData) => {
+    const { data, error } = await sendEmail(formData);
+    if (error) {
+      toast.error(error);
+      return;
+    }
+    if (data?.data === null) {
+      toast.error(data.error?.message || "An unexpected error occurred.");
+      return;
+    }
+
+    toast.success("Message sent!");
+  };
 
   return (
     <motion.section
@@ -35,7 +50,7 @@ export default function Contact() {
         or through this form.
       </p>
 
-      <form action={sendEmail} className='mt-10 flex flex-col'>
+      <form action={handleSubmit} className='mt-10 flex flex-col'>
         <input
           name='senderEmail'
           type='email'
@@ -51,13 +66,7 @@ export default function Contact() {
           required
           maxLength={500}
         />
-        <button
-          type='submit'
-          className='h-[3rem] w-[8rem] rounded-full outline-none transition-all text-white bg-slate-900 flex items-center justify-center gap-2 group focus:scale-110 hover:scale-110 hover:bg-slate-950 active:scale-105 '
-        >
-          Submit{" "}
-          <FaPaperPlane className='text-xs opacity-80 transition-all group-hover:translate-x-1 group-hover:-translate-y-1' />
-        </button>
+        <SubmitBtn />
       </form>
     </motion.section>
   );
