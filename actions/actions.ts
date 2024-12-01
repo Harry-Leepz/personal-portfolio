@@ -20,9 +20,10 @@ export async function sendEmail(formData: FormData) {
     return { error: "Email is required" };
   }
 
+  let data;
   try {
-    await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+    data = await resend.emails.send({
+      from: "Contact Form <onboarding@resend.com>",
       to: "hdhillon478@gmail.com",
       subject: "Message from portfolio contact form",
       replyTo: senderEmail as string,
@@ -32,6 +33,9 @@ export async function sendEmail(formData: FormData) {
       }),
     });
   } catch (error: unknown) {
+    console.log(error);
     return { error: getErrorMessage(error) };
   }
+
+  return { data };
 }
