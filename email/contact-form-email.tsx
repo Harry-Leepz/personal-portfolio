@@ -25,12 +25,14 @@ export default function ContactFormEmail({
   return (
     <Html>
       <Head />
-      <Preview>New message from your portfolio site</Preview>
+      <Preview className='text-black'>
+        New message from your portfolio site
+      </Preview>
       <Tailwind>
-        <Body>
+        <Body className='bg-slate-200 text-black'>
           <Container>
-            <Section>
-              <Heading>
+            <Section className='bg-white border border-black/10 my-10 px-10 py-4 rounded-md'>
+              <Heading className='leading-tight'>
                 Your received the following message from the contact form
               </Heading>
               <Hr />
