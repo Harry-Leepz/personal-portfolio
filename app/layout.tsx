@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
 
@@ -8,7 +9,7 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 import RedBlur from "@/components/background/red-blur";
 import BlueBlur from "@/components/background/blue-blur";
 import Header from "@/components/header/header";
-import { Toaster } from "react-hot-toast";
+import Footer from "@/components/sections/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Toaster position='top-right' />
+          <Footer />
         </ActiveSectionContextProvider>
       </body>
     </html>
