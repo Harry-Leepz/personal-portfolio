@@ -10,6 +10,7 @@ import RedBlur from "@/components/background/red-blur";
 import BlueBlur from "@/components/background/blue-blur";
 import Header from "@/components/header/header";
 import Footer from "@/components/sections/footer";
+import LightDarkBtn from "@/components/buttons/light-dark-btn";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Toaster position='top-right' />
           <Footer />
         </ActiveSectionContextProvider>
+        <LightDarkBtn />
       </body>
     </html>
   );
