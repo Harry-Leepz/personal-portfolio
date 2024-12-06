@@ -11,6 +11,7 @@ import BlueBlur from "@/components/background/blue-blur";
 import Header from "@/components/header/header";
 import Footer from "@/components/sections/footer";
 import LightDarkBtn from "@/components/buttons/light-dark-btn";
+import ThemeContextProvider from "@/context/theme-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,13 +32,15 @@ export default function RootLayout({
       >
         <RedBlur />
         <BlueBlur />
-        <ActiveSectionContextProvider>
-          <Header />
-          {children}
-          <Toaster position='top-right' />
-          <Footer />
-        </ActiveSectionContextProvider>
-        <LightDarkBtn />
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Header />
+            {children}
+            <Toaster position='top-right' />
+            <Footer />
+            <LightDarkBtn />
+          </ActiveSectionContextProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   );
