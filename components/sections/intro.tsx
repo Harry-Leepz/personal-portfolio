@@ -81,7 +81,7 @@ export default function Intro() {
         <Link
           href='#contact'
           className='group bg-slate-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none 
-          focus:scale-110 hover:scale-110 hover:bg-slate-950 active:scale-105 transition'
+          focus:scale-110 hover:scale-110 hover:bg-slate-950 active:scale-105 transition dark:bg-slate-800 dark:text-white/80'
           onClick={() => {
             setCurrentActiveSection("Contact");
             setTimeSinceLastClicked(Date.now());
@@ -94,7 +94,7 @@ export default function Intro() {
         <a
           href=''
           className='group bg-white text-slate-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none 
-          focus:scale-110 hover:scale-110 hover:bg-slate-50 active:scale-105 transition border border-slate-900/10'
+          focus:scale-110 hover:scale-110 hover:bg-slate-50 active:scale-105 transition border border-slate-900/10 dark:bg-white/10 dark:text-white/80'
         >
           Download CV{" "}
           <HiDownload className='opacity-70 group-hover:translate-y-1 transition' />
@@ -104,7 +104,8 @@ export default function Intro() {
           href='https://www.linkedin.com/in/harkarn-dhillon/'
           target='_blank'
           className='bg-white text-slate-700 flex p-4 items-center gap-2 rounded-full text-[1.25rem] outline-none 
-          focus:scale-[1.15] hover:text-slate-950  hover:scale-[1.15] hover:bg-slate-50 active:scale-[1.15] transition border border-slate-900/10'
+          focus:scale-[1.15] hover:text-slate-950  hover:scale-[1.15] hover:bg-slate-50 active:scale-[1.15] transition border border-slate-900/10
+          dark:bg-white/10 dark:text-white/80'
         >
           <BsLinkedin />
         </a>
@@ -113,7 +114,8 @@ export default function Intro() {
           href='https://github.com/Harry-Leepz'
           target='_blank'
           className='bg-white text-slate-700 flex p-4 items-center gap-2 rounded-full text-[1.35rem] outline-none 
-          focus:scale-[1.15] hover:text-slate-950 hover:scale-[1.15] hover:bg-slate-50 active:scale-[1.15] transition border border-slate-900/10'
+          focus:scale-[1.15] hover:text-slate-950 hover:scale-[1.15] hover:bg-slate-50 active:scale-[1.15] transition border border-slate-900/10
+          dark:bg-white/10 dark:text-white/80'
         >
           <BsGithub />
         </a>
