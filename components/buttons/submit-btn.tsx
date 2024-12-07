@@ -11,7 +11,7 @@ export default function SubmitBtn() {
       disabled={pending}
       className='h-[3rem] w-[8rem] rounded-full outline-none transition-all text-white bg-slate-900 
       flex items-center justify-center gap-2 group focus:scale-110 hover:scale-110 hover:bg-slate-950 active:scale-105 
-      disabled:scale-100 disabled:bg-opacity-65
+      disabled:scale-100 disabled:bg-opacity-65 dark:bg-white/20
       '
     >
       {pending ? (
