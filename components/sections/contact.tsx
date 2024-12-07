@@ -38,7 +38,7 @@ export default function Contact() {
     >
       <SectionHeading>Contact Me</SectionHeading>
 
-      <p className='text-slate-700 -mt-6'>
+      <p className='text-slate-700 -mt-6 dark:text-white/85'>
         Please contact me directly via{" "}
         <a
           className='underline font-semibold'
@@ -50,11 +50,15 @@ export default function Contact() {
         or through this form.
       </p>
 
-      <form action={handleSubmit} className='mt-10 flex flex-col'>
+      <form
+        action={handleSubmit}
+        className='mt-10 flex flex-col dark:text-black'
+      >
         <input
           name='senderEmail'
           type='email'
-          className='h-14 rounded-lg border border-black/20 px-4'
+          className='h-14 rounded-lg border border-black/20 px-4
+          dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none'
           placeholder='Your email'
           required
           maxLength={500}
@@ -62,7 +66,8 @@ export default function Contact() {
         <textarea
           name='message'
           placeholder="What's on your mind?"
-          className='h-52 rounded-lg border border-black/20 p-4 my-3'
+          className='h-52 rounded-lg border border-black/20 p-4 my-3
+          dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none'
           required
           maxLength={500}
         />
