@@ -9,6 +9,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { useInView } from "react-intersection-observer";
 
 import useSectionInView from "@/lib/hooks";
+import { useTheme } from "@/context/theme-context";
 
 import { experiencesData } from "@/lib/data";
 
@@ -44,11 +45,13 @@ function ExperienceTimelineItem({ item, index }: ExperienceTimelineItemProps) {
     triggerOnce: true,
   });
 
+  const { theme } = useTheme();
+
   return (
     <div key={index} ref={ref} className='vertical-timeline-element'>
       <VerticalTimelineElement
         contentStyle={{
-          background: "#f3f4f6",
+          background: theme === "light" ? "#f3f4f6" : "rgb(255 255 255 / 0.1)",
           boxShadow: "none",
           border: "1px solid rgba(0, 0, 0, 0.05)",
           textAlign: "left",
@@ -61,13 +64,15 @@ function ExperienceTimelineItem({ item, index }: ExperienceTimelineItemProps) {
         date={item.date}
         icon={item.icon}
         iconStyle={{
-          background: "white",
+          background: theme === "light" ? "white" : "rgb(2 6 23)",
           fontSize: "1.5rem",
         }}
       >
         <h3 className='font-semibold capitalize'>{item.title}</h3>
         <p className='!mt-0 font-normal'>{item.location}</p>
-        <p className='!mt-1 !font-normal text-gray-700'>{item.description}</p>
+        <p className='!mt-1 !font-normal text-gray-700 dark:text-white/70'>
+          {item.description}
+        </p>
       </VerticalTimelineElement>
     </div>
   );
